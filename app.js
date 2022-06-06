@@ -16,9 +16,11 @@ guess.addEventListener("click", () => {
       document.querySelector(".border").classList.remove("bg-danger");
       document.querySelector(".border").classList.add("bg-success");
       correct1();
-      return (document.querySelector(".border").innerText =
-        "Congratulations! You know"), remainingLives = 0;
-      
+      return (
+        (document.querySelector(".border").innerText =
+          "Congratulations! You know"),
+        (remainingLives = 0)
+      );
     } else if (input.value < number) {
       document.querySelector(".border").classList.add("bg-danger");
       remainingLives--;
