@@ -21,7 +21,6 @@ input.addEventListener("keypress", function (event) {
   }
 });
 
-<<<<<<< HEAD
 mirac();
 
 function mirac() {
@@ -67,51 +66,6 @@ function mirac() {
     }
   });
 
-=======
-function mirac() {
-  guess.addEventListener("click", () => {
-    while (remainingLives > 0) {
-      if (input.value == number) {
-        document.querySelector(".border").classList.remove("bg-danger");
-        document.querySelector(".border").classList.add("bg-success");
-        correct1();
-        return (
-          (document.querySelector(".border").innerText =
-            "Congratulations! You know"),
-          (remainingLives = 0)
-        );
-      } else if (input.value < number) {
-        document.querySelector(".border").classList.add("bg-danger");
-        remainingLives--;
-        wrong1();
-        if (remainingLives == 0) {
-          return (document.querySelector(
-            ".border"
-          ).innerText = `Lost  number is: ${number}`);
-        } else {
-          return (document.querySelector(
-            ".border"
-          ).innerText = `Low ⬆ ${remainingLives}`);
-        }
-      } else {
-        remainingLives--;
-        wrong1();
-        if (remainingLives == 0) {
-          return (document.querySelector(
-            ".border"
-          ).innerText = `Lost  number is: ${number}`);
-        } else {
-          document.querySelector(".border").classList.add("bg-danger");
-
-          return (document.querySelector(
-            ".border"
-          ).innerText = `high ⬇ ${remainingLives}`);
-        }
-      }
-    }
-  });
-
->>>>>>> d4fc3021996e7334e3516b7ac727782f3441e069
   tryit.addEventListener("click", () => {
     window.location.reload(false);
   });
