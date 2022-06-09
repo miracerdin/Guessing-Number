@@ -21,6 +21,8 @@ input.addEventListener("keypress", function (event) {
   }
 });
 
+mirac();
+
 function mirac() {
   guess.addEventListener("click", () => {
     while (remainingLives > 0) {
