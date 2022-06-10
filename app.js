@@ -63,7 +63,7 @@ function mirac() {
 
           return (document.querySelector(
             ".border"
-          ).innerText = `high ⬇ ${remainingLives}`);
+          ).innerText = `High ⬇ ${remainingLives}`);
         }
       }
     }
