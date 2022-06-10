@@ -15,9 +15,10 @@ input.addEventListener("keypress", function (event) {
   // If the user presses the "Enter" key on the keyboard
   if (event.key === "Enter") {
     // Cancel the default action, if needed
-    event.preventDefault();
+    // event.preventDefault();
     // Trigger the button element with a click
     document.getElementsByClassName("btn-primary")[0].click();
+    input.value = "";
   }
 });
 
@@ -39,6 +40,7 @@ function mirac() {
         document.querySelector(".border").classList.add("bg-danger");
         remainingLives--;
         wrong1();
+        input.value = "";
         if (remainingLives == 0) {
           return (document.querySelector(
             ".border"
@@ -51,6 +53,7 @@ function mirac() {
       } else {
         remainingLives--;
         wrong1();
+        input.value = "";
         if (remainingLives == 0) {
           return (document.querySelector(
             ".border"
