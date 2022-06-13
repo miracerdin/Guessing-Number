@@ -26,44 +26,51 @@ mirac();
 
 function mirac() {
   guess.addEventListener("click", () => {
-    while (remainingLives > 0) {
-      if (input.value == number) {
-        document.querySelector(".border").classList.remove("bg-danger");
-        document.querySelector(".border").classList.add("bg-success");
-        correct1();
-        return (
-          (document.querySelector(".border").innerText =
-            "Congratulations! You know"),
-          (remainingLives = 0)
-        );
-      } else if (input.value < number) {
-        document.querySelector(".border").classList.add("bg-danger");
-        remainingLives--;
-        wrong1();
-        input.value = "";
-        if (remainingLives == 0) {
-          return (document.querySelector(
-            ".border"
-          ).innerText = `Lost  number is: ${number}`);
-        } else {
-          return (document.querySelector(
-            ".border"
-          ).innerText = `Low ⬆ ${remainingLives}`);
-        }
-      } else {
-        remainingLives--;
-        wrong1();
-        input.value = "";
-        if (remainingLives == 0) {
-          return (document.querySelector(
-            ".border"
-          ).innerText = `Lost  number is: ${number}`);
-        } else {
-          document.querySelector(".border").classList.add("bg-danger");
+    const input = document.querySelector("#input");
+    if (!input.checkValidity()) {
+      document.getElementById("alert").innerHTML = input.validationMessage;
+    } else {
+      document.getElementById("alert").innerHTML = "";
 
-          return (document.querySelector(
-            ".border"
-          ).innerText = `High ⬇ ${remainingLives}`);
+      while (remainingLives > 0) {
+        if (input.value == number) {
+          document.querySelector(".border").classList.remove("bg-danger");
+          document.querySelector(".border").classList.add("bg-success");
+          correct1();
+          return (
+            (document.querySelector(".border").innerText =
+              "Congratulations! You know"),
+            (remainingLives = 0)
+          );
+        } else if (input.value < number) {
+          document.querySelector(".border").classList.add("bg-danger");
+          remainingLives--;
+          wrong1();
+          input.value = "";
+          if (remainingLives == 0) {
+            return (document.querySelector(
+              ".border"
+            ).innerText = `Lost  number is: ${number}`);
+          } else {
+            return (document.querySelector(
+              ".border"
+            ).innerText = `Low ⬆ ${remainingLives}`);
+          }
+        } else {
+          remainingLives--;
+          wrong1();
+          input.value = "";
+          if (remainingLives == 0) {
+            return (document.querySelector(
+              ".border"
+            ).innerText = `Lost  number is: ${number}`);
+          } else {
+            document.querySelector(".border").classList.add("bg-danger");
+
+            return (document.querySelector(
+              ".border"
+            ).innerText = `High ⬇ ${remainingLives}`);
+          }
         }
       }
     }

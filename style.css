@@ -22,3 +22,7 @@ h1 {
 button {
   width: 100px;
 }
+#alert {
+  text-align: center;
+  font-size: large;
+}
