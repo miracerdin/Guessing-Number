@@ -28,6 +28,12 @@ function mirac() {
   guess.addEventListener("click", () => {
     const input = document.querySelector("#input");
     if (!input.checkValidity()) {
+      if (input.value > 50) {
+        input.setCustomValidity("Value must be less than or equal to 50.");
+      } else {
+        input.setCustomValidity("Value must be greater than or equal to 1.");
+      }
+
       document.getElementById("alert").innerHTML = input.validationMessage;
     } else {
       document.getElementById("alert").innerHTML = "";
